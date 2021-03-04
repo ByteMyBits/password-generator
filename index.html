@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+</head>
+
+<body>
+
+    <input type="checkbox" id="upperCheck" name="upperCheck" onclick="check()">
+    <label for="upperCheck">Include Uppercase</label><br>
+    <input type="checkbox" id="lowerCheck" name="lowerCheck" onclick="check()">
+    <label for="lowerCheck">Include Lowercase</label><br>
+    <input type="checkbox" id="numberCheck" name="numberCheck" onclick="check()">
+    <label for="numberCheck">Include Number</label><br>
+    <input type="checkbox" id="specialCheck" name="specialCheck" onclick="check()">
+    <label for="specialCheck">Include Special</label><br><br>
+
+
+    <div class="length-slider">
+        <input type="range" min="8" max="32" value="8" class="slider" id="passwordLength">
+        <p>Password length: <span id="lengthValue"></span></p>
+    </div>
+
+
+
+    <button onclick="generatePassword()" id="generatePassword" style="user-select: none;">Generate Password</button>
+
+    <br><br><br>
+    <p id="password"></p>
+
+    <script src="./Assets/JS/script.js"></script>
+</body>
+
+</html>
