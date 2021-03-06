@@ -158,7 +158,10 @@ let upperCheck = document.getElementById("upperCheck");
 let lowerCheck = document.getElementById("lowerCheck");
 let numberCheck = document.getElementById("numberCheck");
 let specialCheck = document.getElementById("specialCheck");
+let textArea = document.getElementById("textarea");
 
+let copyPassword = document.getElementById("copy");
+let password = "";
 
 //testing randomness
 
@@ -181,7 +184,7 @@ function check() {
     }
     else {
         areAllFalse = false;
-        buttonOpacity.setAttribute("style", "opacity:1");
+        buttonOpacity.setAttribute("style", "opacity:1;  user-select: none");
 
     }
 }
@@ -189,11 +192,40 @@ function check() {
 //to get a more even distribution they would need to be normalised first
 //Achieved this by creating two sets of random numbers, the first chooses whether the type of character should be Uppercase, Lowercase, Numeric or Special. The second random number selects the specific character within that type
 
+function copyText() {
+
+
+
+    // textArea.textContent = "password";
+    // textArea.select();
+    // textArea.setSelectionRange(0, 99999);
+
+    // document.execCommand("copy");
+
+    // copyPassword.textContent = "Copied!";
+
+}
+
+
 function generatePassword() {
+
+
+    // copyPassword.textContent = "Click to copy";
+
     console.clear();
     password = "";
     combined = [];
     whichArraysToAdd = [];
+    if (slider.value > 26) {
+
+        outputPassword.setAttribute("style", "font-size: 16px");
+    } else if (slider.value > 29) {
+        outputPassword.setAttribute("style", "font-size: 14px");
+    } else {
+
+        outputPassword.setAttribute("style", "font-size: 18px");
+    }
+
 
     if (!areAllFalse) {
 
@@ -265,3 +297,4 @@ function generatePassword() {
 }
 
 //on reflection, it would have been a lot more simple and efficient to use character strings i.e. lower = 'abcdefg...' number = '0123456789' etc. and then access the character with a random index. 
+
