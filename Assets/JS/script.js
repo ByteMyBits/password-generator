@@ -170,7 +170,6 @@ let noLower = 0;
 let noNumber = 0;
 let noSpecial = 0;
 
-
 function check() {
 
     hasUpper = upperCheck.checked;
@@ -194,15 +193,8 @@ function check() {
 
 function copyText() {
 
-
-
-    // textArea.textContent = "password";
-    // textArea.select();
-    // textArea.setSelectionRange(0, 99999);
-
-    // document.execCommand("copy");
-
-    // copyPassword.textContent = "Copied!";
+    navigator.clipboard.writeText(outputPassword.textContent);
+    console.log("copied!")
 
 }
 
@@ -247,6 +239,7 @@ function generatePassword() {
             whichArraysToAdd.push(3);
         }
         console.log(whichArraysToAdd);
+        let whichArraysToAddLength = (whichArraysToAdd.length - 1);
 
         // let ArrayLength = combined.length;
         for (let i = 0; i < slider.value; i++) {
@@ -262,7 +255,7 @@ function generatePassword() {
 
 
 
-            let selectCharacterArray = whichArraysToAdd[getRandom(0, (whichArraysToAdd.length - 1))]; //this picks a random number between 0 and 3, depending which checkboxes are ticked, and then selects respective array from whichArraysToAdd
+            let selectCharacterArray = whichArraysToAdd[getRandom(0, (whichArraysToAddLength))]; //this picks a random number between 0 and 3, depending which checkboxes are ticked, and then selects respective array from whichArraysToAdd
             // console.log("Randomly chosen array is: " + selectCharacterArray);
 
 

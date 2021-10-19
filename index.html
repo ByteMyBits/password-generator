@@ -1,93 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Assets/CSS/reset.css">
-    <link rel="stylesheet" href="./Assets/CSS/style.css">
-    <link rel="icon" type="image/png" href="./Assets/images/favicon.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Assets/CSS/reset.css" />
+    <link rel="stylesheet" href="./Assets/CSS/style.css" />
+    <link rel="icon" type="image/png" href="./Assets/images/favicon.png" />
 
     <title>Password Generator</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="inner-container">
-
-            <h1>Password Generator</h1>
-            <div class="display-container">
-                <div onclick="copyText()" class="display">
-
-                    <p id="password"></p>
-                    <!-- <br> -->
-                    <span id="copy"></span>
-                </div>
-            </div>
-
-            <p class="length">Length: <span id="lengthValue"></span></p>
-
-            <div class="slider-container">
-                <p class="min-length">8</p>
-                <input type="range" min="8" max="32" value="8" class="slider" id="passwordLength">
-                <p class="max-length">32</p>
-            </div>
-
-
-            <div class="switches">
-                <div class="switch-container switch-container1">
-                    <div class="switch switch1">
-
-                        <label class="upper-check" for="upperCheck">Include Uppercase</label>
-                        <input type="checkbox" id="upperCheck" name="upperCheck" onclick="check()">
-                    </div>
-                </div>
-                <div class="switch-container switch-container2">
-                    <div class="switch switch2">
-                        <label for="lowerCheck">Include Lowercase</label>
-                        <input type="checkbox" id="lowerCheck" name="lowerCheck" onclick="check()">
-                    </div>
-                </div>
-                <div class="switch-container switch-container3">
-                    <div class="switch switch1">
-                        <label for="numberCheck">Include Number</label>
-                        <input type="checkbox" id="numberCheck" name="numberCheck" onclick="check()">
-                    </div>
-                </div>
-                <div class="switch-container switch-container4">
-                    <div class="switch switch1">
-                        <label for="specialCheck">Include Special</label>
-                        <input type="checkbox" id="specialCheck" name="specialCheck" onclick="check()">
-                    </div>
-                </div>
-
-            </div>
-            <div class="button-container">
-                <button class="button" onclick="generatePassword()" id="generatePassword" style="user-select: none;">
-                    Generate Password
-                    <svg style="width: 40px; height: 40px" viewBox="0 0 45.77 66.25">
-                        <g data-name="Layer 1">
-                            <path
-                                d="M29.94 32.54V15.06a7.06 7.06 0 10-14.11 0v17.48h-8V15.06a15.06 15.06 0 1130.11 0v17.48z"
-                                fill="#e6e6e6" />
-                            <path
-                                d="M10.2 26.14h25.37a10.2 10.2 0 0110.2 10.2v7a22.89 22.89 0 01-22.88 22.91A22.89 22.89 0 010 43.37v-7a10.2 10.2 0 0110.2-10.23z"
-                                fill="#ead95d" />
-                            <path
-                                d="M28.37 40.37a5.49 5.49 0 10-8.7 4.44.83.83 0 01.36.66V50a2.41 2.41 0 002.41 2.41h.9a2.4 2.4 0 002.4-2.41v-4.53a.83.83 0 01.36-.66 5.49 5.49 0 002.27-4.44z"
-                                fill="#717070" />
-                        </g>
-                    </svg>
-                </button>
-            </div>
+      <div class="inner-container">
+        <h1>Password Generator</h1>
+        <div class="display-container">
+          <div onclick="copyText()" class="display">
+            <p id="password"></p>
+            <!-- <br> -->
+            <!-- <span id="copy"></span> -->
+          </div>
+        </div>
+        <div class="length-copy">
+          <p class="length">Length: <span id="lengthValue"></span></p>
+          <button onclick="copyText()" class="copied button-copy">
+            Click to copy
+          </button>
         </div>
 
+        <div class="slider-container">
+          <p class="min-length">8</p>
+          <input
+            type="range"
+            min="8"
+            max="32"
+            value="8"
+            class="slider"
+            id="passwordLength"
+          />
+          <p class="max-length">32</p>
+        </div>
+
+        <div class="switches">
+          <div class="switch-container switch-container1">
+            <div class="switch switch1">
+              <label class="upper-check" for="upperCheck"
+                >Include Uppercase</label
+              >
+              <input
+                type="checkbox"
+                id="upperCheck"
+                name="upperCheck"
+                onclick="check()"
+              />
+            </div>
+          </div>
+          <div class="switch-container switch-container2">
+            <div class="switch switch2">
+              <label for="lowerCheck">Include Lowercase</label>
+              <input
+                type="checkbox"
+                id="lowerCheck"
+                name="lowerCheck"
+                onclick="check()"
+              />
+            </div>
+          </div>
+          <div class="switch-container switch-container3">
+            <div class="switch switch1">
+              <label for="numberCheck">Include Number</label>
+              <input
+                type="checkbox"
+                id="numberCheck"
+                name="numberCheck"
+                onclick="check()"
+              />
+            </div>
+          </div>
+          <div class="switch-container switch-container4">
+            <div class="switch switch1">
+              <label for="specialCheck">Include Special</label>
+              <input
+                type="checkbox"
+                id="specialCheck"
+                name="specialCheck"
+                onclick="check()"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="button-container">
+          <button
+            class="button"
+            onclick="generatePassword()"
+            id="generatePassword"
+            style="user-select: none"
+          >
+            Generate Password
+            <svg style="width: 40px; height: 40px" viewBox="0 0 45.77 66.25">
+              <g data-name="Layer 1">
+                <path
+                  d="M29.94 32.54V15.06a7.06 7.06 0 10-14.11 0v17.48h-8V15.06a15.06 15.06 0 1130.11 0v17.48z"
+                  fill="#e6e6e6"
+                />
+                <path
+                  d="M10.2 26.14h25.37a10.2 10.2 0 0110.2 10.2v7a22.89 22.89 0 01-22.88 22.91A22.89 22.89 0 010 43.37v-7a10.2 10.2 0 0110.2-10.23z"
+                  fill="#ead95d"
+                />
+                <path
+                  d="M28.37 40.37a5.49 5.49 0 10-8.7 4.44.83.83 0 01.36.66V50a2.41 2.41 0 002.41 2.41h.9a2.4 2.4 0 002.4-2.41v-4.53a.83.83 0 01.36-.66 5.49 5.49 0 002.27-4.44z"
+                  fill="#717070"
+                />
+              </g>
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
 
-
-
     <script src="./Assets/JS/script.js"></script>
-</body>
-
+  </body>
 </html>
