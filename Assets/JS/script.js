@@ -3,8 +3,8 @@
 // holds true/false if a checkbox has been selected
 //upper is true initially, if not weird things happen until a checkbox state is changed
 let hasUpper = true;
-let hasLower;
-let hasNumber;
+let hasLower = true;
+let hasNumber = true;
 let hasSpecial;
 
 //arrays to hold the unicode corresponding numbers
@@ -149,6 +149,7 @@ let areAllFalse = false;
 let buttonOpacity = document.getElementById("generatePassword");
 let initialCheck = document.getElementById("upperCheck");
 initialCheck.checked = true;
+
 // let password = "";
 
 // let howManyChecked = 0;
@@ -156,7 +157,9 @@ let outputPassword = document.getElementById("password");
 
 let upperCheck = document.getElementById("upperCheck");
 let lowerCheck = document.getElementById("lowerCheck");
+lowerCheck.checked = true;
 let numberCheck = document.getElementById("numberCheck");
+numberCheck.checked = true;
 let specialCheck = document.getElementById("specialCheck");
 let textArea = document.getElementById("textarea");
 
